@@ -12,9 +12,10 @@ const user = {
 };
 
 const header = (
-  <h1>
-    Hello, {formatName(user)}!
-  </h1>
+  <div>
+    <h1>Hello, {formatName(user)}!</h1>
+    <h2>{new Date().toLocaleDateString()}</h2>
+  </div>
 );
 
 class App extends Component {
