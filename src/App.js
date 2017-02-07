@@ -10,17 +10,42 @@ function getCurrentDate() {
   return new Date().toLocaleDateString();
 }
 
+function Welcome(props) {
+  return <div><h1>Hello, {props.name}!</h1><h2>{getCurrentDate()}</h2></div>;
+}
+
+class ReadPreview extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {date: new Date()};
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Hello, Doug!</h1>
+        <h2>{this.state.date.toLocaleDateString()}</h2>
+      </div>
+    );
+  }
+}
+
+function update() {
+
+}
+
 const user = {
   firstName: "Doug",
   lastName: "Milvaney"
 };
 
-const header = (
+/*const header = (
   <div>
     <h1>Hello, {formatName(user)}!</h1>
     <h2>{getCurrentDate()}</h2>
   </div>
-);
+);*/
+const header = <Welcome name="Doug" />;
 
 class App extends Component {
   render() {
@@ -28,7 +53,7 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          {header}
+          {<ReadPreview />}
         </div>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
