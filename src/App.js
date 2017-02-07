@@ -6,6 +6,10 @@ function formatName(user) {
   return user.firstName + ' ' + user.lastName;
 }
 
+function getCurrentDate() {
+  return new Date().toLocaleDateString();
+}
+
 const user = {
   firstName: "Doug",
   lastName: "Milvaney"
@@ -14,7 +18,7 @@ const user = {
 const header = (
   <div>
     <h1>Hello, {formatName(user)}!</h1>
-    <h2>{new Date().toLocaleDateString()}</h2>
+    <h2>{getCurrentDate()}</h2>
   </div>
 );
 
